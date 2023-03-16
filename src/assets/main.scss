@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap');
+
+@font-face {
+  font-family: 'Arvo-bold';
+  src: url('@/assets/fonts/Arvo-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Arvo-regular';
+  src: url('@/assets/fonts/Arvo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rasa-Regular';
+  src: url('@/assets/fonts/Rasa-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rasa-Medium';
+  src: url('@/assets/fonts/Rasa-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rasa-SemiBold';
+  src: url('@/assets/fonts/Rasa-SemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Rasa-Bold';
+  src: url('@/assets/fonts/Rasa-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Rasa-Regular', sans-serif;
+}
+html {
+  // block-size: 100%;
+  // scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+// section {
+//   scroll-snap-align: start;
+//   scroll-snap-stop: always;
+// }
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+li {
+  list-style: none;
+}
+h1 {
+  font-family: 'Rasa-Bold', sans-serif;
+}
+h2 {
+  font-family: 'Rasa-Medium', sans-serif;
+}
+h3,
+p {
+  font-family: 'Rasa-Regular', sans-serif;
+}
+.screen-font {
+  font-family: 'Rasa-SemiBold', sans-serif;
+  position: relative;
+}
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  overflow-x: hidden;
+}
+.idToSect {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  z-index: 50;
+  top: -50px;
+}
+.first-screen {
+  background: rgb(166, 96, 58);
+  color: rgb(239, 227, 184);
+  width: 100%;
+  margin-top: 56px;
+}
+.first-screen-div {
+  background: rgb(166, 96, 58);
+  color: rgb(239, 227, 184);
+  padding: 2rem;
+  // height: calc(100vh - 56px);
+  text-align: center;
+  h1 {
+    font-size: 2.4rem;
+    width: 50px;
+    margin: 1rem 0;
+  }
+  p {
+    font-size: 1.9rem;
+    margin: 4rem 0;
+    text-align: left;
+  }
+  .compra-aqui-a {
+    font-family: 'DM+Sans', sans-serif;
+    background: rgb(166, 96, 58);
+    color: rgb(239, 227, 184);
+    border: 1px solid rgb(239, 227, 184);
+    padding: 1.4rem 4rem;
+    font-size: 1rem;
+    &:hover {
+      background-color: rgb(146, 76, 38);
+      color: rgb(259, 247, 204);
+    }
+  }
+}
+.first-screen-img {
+  position: relative;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  padding: 60px 0 0;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+//* SECOND SCREEN
+.second-screen-div {
+  background: rgb(239, 227, 184);
+  color: rgb(166, 96, 58);
+  padding: 2rem;
+  // height: calc(100vh - 140px);
+  text-align: center;
+  h1 {
+    font-size: 1.9rem;
+    margin: 1.1rem 0;
+  }
+  h4 {
+    font-size: 1.7rem;
+    text-decoration: underline;
+  }
+  p {
+    font-size: 1.5rem;
+    margin: 4rem 0 2rem;
+    text-align: center;
+  }
+}
+.second-screen-img {
+  position: relative;
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+//* THIRD SCREEN
+.third-screen {
+  background: rgb(166, 96, 58);
+  color: rgb(239, 227, 184);
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  letter-spacing: 1px;
+  h1 {
+    font-size: 2.5rem;
+    margin: 3rem 0;
+  }
+}
+.third-screen-div {
+  margin: 2.5rem 0 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: rgb(239, 227, 184);
+  h2 {
+    font-size: 2rem;
+    margin: 2.5rem 0;
+  }
+  p {
+    font-size: 1.5rem;
+    margin: 3rem 0;
+    text-align: center;
+    line-height: 1.8rem;
+  }
+}
+.third-screen-img {
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  img {
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+  }
+}
+//* FOURTH SCREEN
+.fourth-screen {
+  background: rgb(239, 227, 184);
+  color: rgb(166, 96, 58);
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  letter-spacing: 1px;
+  h1 {
+    font-size: 2.5rem;
+    margin: 3rem 0;
+  }
+}
+.fourth-screen-div {
+  margin: 2.5rem 0 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  h2 {
+    font-size: 2rem;
+    margin: 2.5rem 0;
+  }
+  p {
+    font-size: 1.5rem;
+    margin: 3rem 0;
+    text-align: center;
+    line-height: 1.8rem;
+  }
+}
+.fourth-screen-img {
+  // border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  img {
+    object-fit: cover;
+    height: 200px;
+    width: 300px;
+  }
+}
+//* FIFTH SCREEN
+.fifth-screen {
+  background: rgb(166, 96, 58);
+  color: rgb(36, 36, 35);
+  width: 100%;
+  text-align: center;
+  padding: 2rem 2rem 3rem;
+  letter-spacing: 1px;
+  h1 {
+    font-size: 2.5rem;
+    margin: 3rem 0;
+  }
+}
+.fifth-screen-div {
+  margin: 2.5rem 0 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 2px solid rgb(239, 227, 184);
+  h2 {
+    font-size: 2rem;
+    margin: 2.5rem 0;
+  }
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+  }
+}
+.fifth-screen-img {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  img {
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+  }
+}
+//* SIXTH SCREEN
+.sixth-screen {
+  color: rgb(36, 36, 35);
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  letter-spacing: 1px;
+  position: relative;
+  h1 {
+    font-size: 2.5rem;
+    margin: 3rem 0;
+  }
+  .sixth-img-background {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    // right: 0;
+    transform: rotate(270deg);
+    // width: 10000px;
+    // height: 10000px;
+    width: 1500px;
+    height: 1500px;
+  }
+}
+.sixth-screen-div {
+  padding: 2.5rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 10px dotted rgb(166, 96, 58);
+  // border-bottom: 1px solid black;
+  h3 {
+    margin: 1rem;
+  }
+  p {
+    font-size: 1.5rem;
+    text-align: center;
+    line-height: 2rem;
+  }
+}
+.sixth-screen-img {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  img {
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+  }
+}
+
+//* SEVENTH SCREEN
+.seventh-screen {
+  background: rgb(239, 227, 184);
+  color: rgb(166, 96, 58);
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  letter-spacing: 1px;
+  h1 {
+    font-size: 2.5rem;
+    margin: 3rem 0;
+  }
+  .svg-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin: 2rem 0;
+  }
+}
+.seventh-screen-div {
+  margin: 2.5rem 0 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+  h2 {
+    width: 100%;
+    font-size: 2rem;
+    margin: 1.7rem 0;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+}
+.seventh-screen-img {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0 4rem;
+  img {
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
+  }
+}
+// Define las variables para los breakpoints
+$small-screen: 480px;
+$medium-screen: 768px;
+$large-screen: 1024px;
+
+// Estilos para pantallas pequeñas
+@media (max-width: $small-screen) {
+  // Estilos aquí
+}
+
+// Estilos para pantallas medianas
+@media (min-width: $medium-screen) {
+  .first-screen-img {
+    width: 100%;
+    position: relative;
+    &img {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      /* width: 100%; */
+      /* object-fit: cover; */
+      object-fit: contain;
+    }
+  }
+}
+
+// Estilos para pantallas grandes
+@media (min-width: $large-screen) {
+  // Estilos aquí
+}
