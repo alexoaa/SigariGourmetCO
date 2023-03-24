@@ -117,12 +117,15 @@
         </div>
       </div>
     </section>
-    <!-- FIFTH SCREEN -->
+    <!-- FIFTH SCREEN - NUESTROS PRODUCTOS-->
     <section class="fifth-screen screen-font" id="">
       <div id="Nuestrosproductos" class="idToSect" />
       <h1>Nuestros productos</h1>
       <div class="fifth-screen-div 1sec" @click="selectedProduct(0)">
         <div class="fifth-screen-img">
+        <img src="@/assets/images/nuestros-productos.webp" alt="Sigari Gourmet CO" />
+      </div>
+      <div class="fifth-screen-img">
         <img src="@/assets/images/nuestros-productos.webp" alt="Sigari Gourmet CO" />
       </div>
         <h2>Coffee Bomb</h2>
