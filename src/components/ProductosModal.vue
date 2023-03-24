@@ -34,7 +34,7 @@ export default {
   },
   computed: {
     imgSrc() {
-      return `/assets/images/${this.productosInfo[this.productIndex].img}.webp`;
+      return `/assets/${this.productosInfo[this.productIndex].img}.webp`;
     },
     ...mapStores(useProductStore)
   },
