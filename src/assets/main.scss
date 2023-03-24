@@ -69,6 +69,10 @@ h3,
 p {
   font-family: 'Rasa-Regular', sans-serif;
 }
+// Whenever a modal is open, the body will have overflow hidden
+body.modal-open {
+  overflow: hidden;
+}
 
 .screen-font {
   font-family: 'Rasa-SemiBold', sans-serif;
@@ -254,6 +258,7 @@ p {
   text-align: center;
   padding: 2rem 2rem 3rem;
   letter-spacing: 1px;
+  position: relative;
   h1 {
     font-size: 2.5rem;
     margin: 3rem 0;

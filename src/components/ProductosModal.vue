@@ -1,14 +1,29 @@
 <template>
-  <div class="fifth-screen-div 1sec">
-    <div class="fifth-screen-img">
-      <img :src="imgSrc" alt="Sigari Gourmet CO" />
+  <div class="product-modal">
+    <div
+      class="product-modal-close"
+      @click="this.productStore.isProductModalOpen = !this.productStore.isProductModalOpen"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" width:="30px" height="30px" fill="rgb(239, 227, 184)">
+        <path
+          d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"
+        />
+      </svg>
     </div>
-    <h2>{{ productosInfo[productIndex].producto }}</h2>
-    <p>{{ productosInfo[productIndex].desc }}</p>
+    <div class="product-modal-content">
+      <div class="product-modal-img">
+        <img :src="imgSrc" alt="Sigari Gourmet CO" />
+      </div>
+      <h2>{{ productosInfo[productIndex].producto }}</h2>
+      <p>{{ productosInfo[productIndex].desc }}</p>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapStores } from 'pinia';
+import useProductStore from '@/stores/product.js';
+
 export default {
   name: 'ProductosModal',
   props: {
@@ -20,7 +35,8 @@ export default {
   computed: {
     imgSrc() {
       return `../src/assets/images/${this.productosInfo[this.productIndex].img}.webp`;
-    }
+    },
+    ...mapStores(useProductStore)
   },
   data() {
     return {
@@ -71,6 +87,68 @@ export default {
         }
       ]
     };
+  },
+  mounted() {
+    // Agrega la clase modal-open al cuerpo de la página cuando se abre el modal
+    document.body.classList.add("modal-open");
+  },
+  beforeUnmount() {
+    // Elimina la clase modal-open del cuerpo de la página cuando se cierra el modal
+    document.body.classList.remove("modal-open");
   }
 };
 </script>
+
+<style lang="scss">
+.product-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 11;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  .product-modal-close {
+    text-align: right;
+    padding: 20px;
+    svg:hover {
+      cursor: pointer;
+    }
+  }
+  .product-modal-content {
+    margin: 0 1rem 2rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: rgb(239, 227, 184);
+    border-radius: 10px;
+    overflow-y: auto;
+    h2 {
+      font-size: 2rem;
+      margin: 1.5rem 0;
+    }
+    p {
+      font-size: 1.5rem;
+      text-align: center;
+      line-height: 2rem;
+    }
+  }
+  .product-modal-img {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    border-radius: 10px;
+    img {
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+    }
+  }
+}
+</style>

@@ -142,7 +142,7 @@
       <div class="fifth-screen-div 6sec" @click="selectedProduct(5)">
         <h2>Chai smoke</h2>
       </div>
-      <ProductosModal v-if="this.isProductModalOpen" :productIndex="productIndex"></ProductosModal>
+      <ProductosModal v-if="this.productStore.isProductModalOpen" :productIndex="productIndex"></ProductosModal>
     </section>
     <!-- SIXTH SCREEN -->
     <section class="sixth-screen screen-font" id="">
@@ -250,15 +250,16 @@
 </template>
 
 <script>
+import { mapStores } from 'pinia';
 import DropDownMenu from '@/components/DropDownMenu.vue';
 import ProductosModal from '@/components/ProductosModal.vue';
+import useProductStore from "@/stores/product.js";
 
 export default {
   name: 'App',
   data() {
     return {
       productIndex: "",
-      isProductModalOpen: false,
     };
   },
   components: {
@@ -267,10 +268,12 @@ export default {
   },
   methods: {
     selectedProduct(value) {
-      this.isProductModalOpen = !this.isProductModalOpen;
+      this.productStore.isProductModalOpen = !this.productStore.isProductModalOpen;
       this.productIndex = value;
     }
   },
-  computed: {}
+  computed: {
+    ...mapStores(useProductStore),
+  }
 };
 </script>
