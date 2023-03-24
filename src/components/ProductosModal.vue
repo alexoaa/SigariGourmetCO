@@ -12,7 +12,8 @@
     </div>
     <div class="product-modal-content">
       <div class="product-modal-img">
-        <img :src="imgSrc" alt="Sigari Gourmet CO" />
+        <!-- <img :src="imgSrc" alt="Sigari Gourmet CO" /> -->
+        <img :src="'src/assets/images/' + this.productosInfo[this.productIndex].img + '.webp'" alt="Sigari Gourmet CO" />
       </div>
       <h2>{{ productosInfo[productIndex].producto }}</h2>
       <p>{{ productosInfo[productIndex].desc }}</p>
@@ -34,7 +35,7 @@ export default {
   },
   computed: {
     imgSrc() {
-      return `/assets/${this.productosInfo[this.productIndex].img}.webp`;
+      return `@/assets/images/${this.productosInfo[this.productIndex].img}.webp`;
     },
     ...mapStores(useProductStore)
   },
