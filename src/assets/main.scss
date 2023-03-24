@@ -52,7 +52,6 @@ html {
 //   scroll-snap-align: start;
 //   scroll-snap-stop: always;
 // }
-
 a {
   text-decoration: none;
   color: #fff;
@@ -70,6 +69,7 @@ h3,
 p {
   font-family: 'Rasa-Regular', sans-serif;
 }
+
 .screen-font {
   font-family: 'Rasa-SemiBold', sans-serif;
   position: relative;
@@ -83,23 +83,26 @@ p {
   overflow-x: hidden;
 }
 .idToSect {
-  height: 20px;
-  width: 20px;
   position: absolute;
   z-index: 50;
-  top: -50px;
+  top: -60px;
 }
+
+//* FIRST SCREEN
 .first-screen {
-  background: rgb(166, 96, 58);
+  background-image: url('@/assets/images/main.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: rgb(239, 227, 184);
   width: 100%;
+  height: calc(100vh - 56px);
   margin-top: 56px;
+  padding: 2rem;
 }
 .first-screen-div {
-  background: rgb(166, 96, 58);
-  color: rgb(239, 227, 184);
-  padding: 2rem;
   text-align: center;
+  height: 100%;
   h1 {
     font-size: 2.4rem;
     width: 50px;
@@ -111,10 +114,10 @@ p {
     text-align: left;
   }
   .compra-aqui-a {
+    display: inline-block;
     font-family: 'DM+Sans', sans-serif;
-    background: rgb(166, 96, 58);
     color: rgb(239, 227, 184);
-    border: 1px solid rgb(239, 227, 184);
+    border: 2px solid rgb(239, 227, 184);
     padding: 1.4rem 4rem;
     font-size: 1rem;
     &:hover {
@@ -123,23 +126,11 @@ p {
     }
   }
 }
-.first-screen-img {
-  position: relative;
-  height: 500px;
-  width: 100%;
-  overflow: hidden;
-  padding: 60px 0 0;
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-}
 //* SECOND SCREEN
 .second-screen-div {
   background: rgb(239, 227, 184);
   color: rgb(166, 96, 58);
-  padding: 4rem 2rem;
+  padding: 3rem 2rem;
   text-align: center;
   h1 {
     font-size: 1.9rem;

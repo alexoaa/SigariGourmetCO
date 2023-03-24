@@ -15,9 +15,6 @@
         </div>
         <a class="compra-aqui-a" href="#Contacto">COMPRA AQUÍ</a>
       </div>
-      <div class="first-screen-img">
-        <img src="@/assets/images/first.webp" alt="Sigari Gourmet CO" />
-      </div>
     </section>
     <!-- SECOND SCREEN -->
     <section class="second-screen screen-font">
@@ -35,7 +32,7 @@
         </div>
       </div>
       <div class="second-screen-img">
-        <img src="@/assets/images/second.webp" alt="Sigari Gourmet CO" />
+        <img src="@/assets/images/historia.webp" alt="Sigari Gourmet CO" />
       </div>
     </section>
     <!-- THIRD SCREEN -->
@@ -44,7 +41,7 @@
       <h1>Productos naturales</h1>
       <div class="third-screen-div 1st-img">
         <div class="third-screen-img">
-          <img src="@/assets/images/third1.webp" alt="Sigari Gourmet CO" />
+          <img src="@/assets/images/ingredientes.webp" alt="Sigari Gourmet CO" />
         </div>
         <div>
           <h2>Ingredientes</h2>
@@ -56,7 +53,7 @@
       </div>
       <div class="third-screen-div 2nd-img">
         <div class="third-screen-img">
-          <img src="@/assets/images/third2.webp" alt="Sigari Gourmet CO" />
+          <img src="@/assets/images/alternativa-sostenible.webp" alt="Sigari Gourmet CO" />
         </div>
         <div>
           <h2>Alternativa sostenible</h2>
@@ -65,7 +62,7 @@
       </div>
       <div class="third-screen-div 3rd-img">
         <div class="third-screen-img">
-          <img src="@/assets/images/third3.jpg" alt="Sigari Gourmet CO" />
+          <img src="@/assets/images/sabores.webp" alt="Sigari Gourmet CO" />
         </div>
         <div>
           <h2>Sabores</h2>
@@ -83,7 +80,7 @@
       <h1>¿Quiénes somos?</h1>
       <div class="fourth-screen-div 1st-sec">
         <div class="fourth-screen-img">
-          <img src="@/assets/images/third1.webp" alt="Sigari Gourmet CO" />
+          <img src="@/assets/images/empresa.webp" alt="Sigari Gourmet CO" />
         </div>
         <div>
           <h2>Empresa 100% mexicana</h2>
@@ -96,7 +93,7 @@
       </div>
       <div class="fourth-screen-div 2nd-sec">
         <div class="fourth-screen-img">
-          <img src="@/assets/images/third2.webp" alt="Sigari Gourmet CO" />
+          <img src="@/assets/images/creacion.webp" alt="Sigari Gourmet CO" />
         </div>
         <div>
           <h2>Creación</h2>
@@ -109,7 +106,7 @@
       </div>
       <div class="fourth-screen-div 3rd-sec">
         <div class="fourth-screen-img">
-          <img src="@/assets/images/third3.jpg" alt="Sigari Gourmet CO" />
+          <img src="@/assets/images/innovacion.webp" alt="Sigari Gourmet CO" />
         </div>
         <div>
           <h2>Innovación</h2>
@@ -124,59 +121,28 @@
     <section class="fifth-screen screen-font" id="">
       <div id="Nuestrosproductos" class="idToSect" />
       <h1>Nuestros productos</h1>
-      <div class="fifth-screen-img">
-        <img src="@/assets/images/nuestrosProductos.jpg" alt="Sigari Gourmet CO" />
+      <div class="fifth-screen-div 1sec" @click="selectedProduct(0)">
+        <div class="fifth-screen-img">
+        <img src="@/assets/images/nuestros-productos.webp" alt="Sigari Gourmet CO" />
       </div>
-      <div class="fifth-screen-div 1sec">
         <h2>Coffee Bomb</h2>
-        <p>
-          Si eres un amante del café, nuestro producto elaborado con café es perfecto para ti. Con
-          su sabor delicioso y natural, podrás disfrutar de la experiencia de un café recién hecho
-          en cualquier momento y lugar.
-        </p>
       </div>
-      <div class="fifth-screen-div 2sec">
+      <div class="fifth-screen-div 2sec" @click="selectedProduct(1)">
         <h2>Choco Passion</h2>
-        <p>
-          Con su sabor rico y cremoso, podrás disfrutar de la experiencia del chocolate en cualquier
-          momento y lugar, sin sentirte culpable por haberlo disfrutado.
-        </p>
       </div>
-      <div class="fifth-screen-div 3sec">
+      <div class="fifth-screen-div 3sec" @click="selectedProduct(2)">
         <h2>Mango Fresa Delight</h2>
-        <p>
-          Nuestro producto elaborado con mango con fresa es versátil y se puede disfrutar en
-          cualquier momento del día. Ya sea como un complemento perfecto para un desayuno
-          energizante, como un snack delicioso a media tarde, o incluso como postre después de una
-          cena deliciosa, nuestro producto siempre es una buena opción.
-        </p>
       </div>
-      <div class="fifth-screen-div 4sec">
+      <div class="fifth-screen-div 4sec" @click="selectedProduct(3)">
         <h2>Menta Fusión</h2>
-        <p>
-          Hemos utilizado la mejor selección de hojas de menta fresca o hierbas finas para crear un
-          sabor fresco y aromático que te encantará. Delicioso y refrescante.
-        </p>
       </div>
-      <div class="fifth-screen-div 5sec">
+      <div class="fifth-screen-div 5sec" @click="selectedProduct(4)">
         <h2>Bubble-Gum</h2>
-        <p>
-          El sabor a chicle es conocido por su sabor dulce y refrescante, y hemos creado una mezcla
-          de sabores que seguramente satisfará tus antojos por lo dulce. Ya sea que lo disfrutes
-          como un postre después de una comida, como un refrigerio dulce en el trabajo o en la
-          escuela, o incluso como una opción para satisfacer los antojos durante la noche, nuestro
-          producto siempre será una buena elección.
-        </p>
       </div>
-      <div class="fifth-screen-div 6sec">
+      <div class="fifth-screen-div 6sec" @click="selectedProduct(5)">
         <h2>Chai smoke</h2>
-        <p>
-          Nos complace presentarte nuestro nuevo producto elaborado con té chai, una deliciosa
-          bebida que ha sido cuidadosamente creada con una combinación de especias aromáticas y té
-          negro. Este producto es perfecto para aquellos que buscan una bebida con un sabor exótico
-          y estimulante.
-        </p>
       </div>
+      <ProductosModal v-if="this.isProductModalOpen" :productIndex="productIndex"></ProductosModal>
     </section>
     <!-- SIXTH SCREEN -->
     <section class="sixth-screen screen-font" id="">
@@ -285,16 +251,26 @@
 
 <script>
 import DropDownMenu from '@/components/DropDownMenu.vue';
+import ProductosModal from '@/components/ProductosModal.vue';
 
 export default {
   name: 'App',
   data() {
-    return {};
+    return {
+      productIndex: "",
+      isProductModalOpen: false,
+    };
   },
   components: {
-    DropDownMenu
+    DropDownMenu,
+    ProductosModal
   },
-  methods: {},
+  methods: {
+    selectedProduct(value) {
+      this.isProductModalOpen = !this.isProductModalOpen;
+      this.productIndex = value;
+    }
+  },
   computed: {}
 };
 </script>
