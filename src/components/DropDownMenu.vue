@@ -1,11 +1,14 @@
 <template>
-  <div class="nav-main-container" :class="{ 'scrolled-down': this.scrolledDown }">
+  <div
+    class="nav-main-container"
+    :class="{ 'scrolled-down': this.scrolledDown, 'menu-open': this.isMenuOpen }"
+  >
     <div
       @click="toggleMenu"
       class="nav-main-container-1st-div"
       :class="{ 'scrolled-down-a': this.scrolledDownA }"
     >
-      {{ this.textMenuLabelComp }}
+      <span>{{ this.textMenuLabelComp }}</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 448 512"
@@ -102,35 +105,52 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+.menu-open {
+  background: rgb(166, 96, 58) !important;
+  span {
+    color: rgb(239, 227, 184) !important;
+  }
+  svg {
+    fill: rgb(239, 227, 184) !important;
+  }
+}
 .nav-main-container {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 3;
   min-height: 56px;
-  background: rgb(166, 96, 58);
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  transition: 0.3s;
+  transition: all 0.3s;
   color: rgb(239, 227, 184);
 }
 .nav-main-container-1st-div {
   padding: 20px 10px;
-  font-family: 'Rasa-SemiBold', sans-serif;
-  font-size: 1.9rem;
-  transition: 0.3s;
+  transition: all 0.3s, color 0.1s;
+  span {
+    font-family: 'Rasa-SemiBold', sans-serif;
+    font-size: 1.9rem;
+    margin-right: 6px;
+    user-select: none;
+  }
 }
 .nav-main-container-1st-div:hover {
   cursor: pointer;
 }
 .scrolled-down {
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.14);
+  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+  background: rgb(239, 227, 184);
 }
 .scrolled-down-a {
   padding: 25px 0;
+  color: rgb(166, 96, 58);
+  svg {
+    fill: rgb(166, 96, 58);
+  }
 }
 .nav-container {
   position: sticky;
@@ -140,8 +160,8 @@ export default {
   width: 100%;
   z-index: 10;
   background: rgb(239, 227, 184);
-  border-bottom: 1px solid rgb(146, 76, 38);
-  border-top: 1px solid rgb(146, 76, 38);
+  border-bottom: 3px solid rgb(146, 76, 38);
+  border-top: 3px solid rgb(146, 76, 38);
 }
 .nav-menu {
   width: 100%;

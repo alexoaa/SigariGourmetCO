@@ -44,14 +44,14 @@
   font-family: 'Rasa-Regular', sans-serif;
 }
 html {
-  // block-size: 100%;
-  // scroll-snap-type: y mandatory;
+  block-size: 100%;
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
-// section {
-//   scroll-snap-align: start;
-//   scroll-snap-stop: always;
-// }
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
 a {
   text-decoration: none;
   color: #fff;
@@ -101,8 +101,8 @@ body.modal-open {
   color: rgb(239, 227, 184);
   width: 100%;
   height: calc(100vh - 56px);
-  margin-top: 56px;
   padding: 2rem;
+  padding-top: calc(2rem + 56px);
 }
 .first-screen-div {
   text-align: center;
@@ -265,26 +265,17 @@ body.modal-open {
   }
 }
 .fifth-screen-div {
-  margin: 2.5rem 0 0;
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  padding: 2.5rem 0;
+  text-align: center;
   border-top: 2px solid rgb(239, 227, 184);
-  h2 {
-    font-size: 2rem;
-    margin: 1.5rem 0;
-  }
-  p {
-    font-size: 1.5rem;
-    text-align: center;
-    line-height: 2rem;
-  }
-  &:hover {
-    opacity: 0.8;
-    cursor: pointer;
-  }
+}
+.first-img {
+  margin-bottom: 4rem !important;
 }
 .fifth-screen-img {
   overflow: hidden;
@@ -292,10 +283,35 @@ body.modal-open {
   justify-content: center;
   align-items: center;
   margin: 1rem 0;
+  width: 300px;
   img {
+    transition: all 0.5s ease;
     object-fit: cover;
     height: 300px;
-    width: 300px;
+  }
+  h2 {
+    display: inline-block;
+    position: absolute;
+    top: 50;
+    left: 50;
+    z-index: 2;
+    font-size: 2rem;
+    margin: 0 1.5rem;
+    padding: 16px 24px;
+    border-radius: 10px;
+    color: rgb(239, 227, 184);
+    background: rgb(36, 36, 35, 0.6);
+    transition: all 0.5s ease;
+  }
+  &:hover {
+    cursor: pointer;
+    h2 {
+      transform: scale(1.1);
+    }
+    img {
+      filter: brightness(0.6);
+      transform: scale(1.2);
+    }
   }
 }
 //* SIXTH SCREEN
@@ -372,6 +388,9 @@ body.modal-open {
     justify-content: space-evenly;
     margin: 2rem 0;
   }
+  // p {
+  //   white-space: nowrap;
+  // }
 }
 .seventh-screen-div {
   margin: 2.5rem 0 0;

@@ -17,6 +17,8 @@
       </div>
       <h2>{{ productosInfo[productIndex].producto }}</h2>
       <p>{{ productosInfo[productIndex].desc }}</p>
+      <button @click="addShopCart">Añadir al carrito</button>
+      <button @click="buyNow">Comprar ya</button>
     </div>
   </div>
 </template>
@@ -38,6 +40,15 @@ export default {
       return `@/assets/images/${this.productosInfo[this.productIndex].img}.webp`;
     },
     ...mapStores(useProductStore)
+  },
+  methods: {
+    addShopCart() {
+      this.productStore.productsShopCar++;
+      this.productStore.isProductModalOpen = !this.productStore.isProductModalOpen;
+    },
+    buyNow() {
+      this.productStore.isProductModalOpen = !this.productStore.isProductModalOpen;
+    }
   },
   data() {
     return {
@@ -129,13 +140,28 @@ export default {
     border-radius: 10px;
     overflow-y: auto;
     h2 {
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin: 1.5rem 0;
     }
     p {
       font-size: 1.5rem;
       text-align: center;
       line-height: 2rem;
+      margin: 1rem 0;
+    }
+    button {
+      font-size: 1.5rem;
+      padding: 16px 24px;
+      margin: 1rem;
+      border: 1px solid rgb(239, 227, 184);
+      border-radius: 5px;
+      background: rgb(166, 96, 58);
+      color: rgb(239, 227, 184);
+      &:hover {
+        background: rgb(146, 76, 38);
+        color: rgb(219, 207, 164);
+        cursor: pointer;
+      }
     }
   }
   .product-modal-img {

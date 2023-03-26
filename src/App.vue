@@ -13,7 +13,7 @@
             exigentes."
           </p>
         </div>
-        <a class="compra-aqui-a" href="#Contacto">COMPRA AQUÍ</a>
+        <a class="compra-aqui-a" href="#Nuestrosproductos">COMPRA AQUÍ</a>
       </div>
     </section>
     <!-- SECOND SCREEN -->
@@ -121,48 +121,48 @@
     <section class="fifth-screen screen-font" id="">
       <div id="Nuestrosproductos" class="idToSect" />
       <h1>Nuestros productos</h1>
-      <div class="fifth-screen-img">
+      <div class="fifth-screen-img first-img">
         <img src="@/assets/images/nuestros-productos.webp" alt="Sigari Gourmet CO" />
       </div>
-      <div class="fifth-screen-div 1sec" @click="selectedProduct(0)">
-      <h2>Coffee Bomb</h2>
-      <div class="fifth-screen-img">
-        <img src="@/assets/images/coffee-bomb.webp" alt="Sigari Gourmet CO" />
+      <div class="fifth-screen-div 1sec">
+      <div class="fifth-screen-img" @click="selectedProduct(0)">
+          <h2>Coffee Bomb</h2>
+          <img src="@/assets/images/coffee-bomb.webp" alt="Sigari Gourmet CO" />
+        </div>
       </div>
-      </div>
-      <div class="fifth-screen-div 2sec" @click="selectedProduct(1)">
-        <h2>Choco Passion</h2>
-        <div class="fifth-screen-img">
+      <div class="fifth-screen-div 2sec">
+      <div class="fifth-screen-img" @click="selectedProduct(1)">
+          <h2>Choco Passion</h2>
           <img src="@/assets/images/choco-passion.webp" alt="Sigari Gourmet CO" />
         </div>
       </div>
-      <div class="fifth-screen-div 3sec" @click="selectedProduct(2)">
-        <h2>Mango Fresa Delight</h2>
-        <div class="fifth-screen-img">
-          <img src="@/assets/images/mango-fresa-delight.webp" alt="Sigari Gourmet CO" />
+      <div class="fifth-screen-div 3sec">
+      <div class="fifth-screen-img" @click="selectedProduct(2)">
+          <h2>Mango Fresa Delight</h2>
+          <img src="@/assets/images/mango-fresa-delight.webp" alt="Sigari Gourmet CO" class="object-contain" />
         </div>
       </div>
-      <div class="fifth-screen-div 4sec" @click="selectedProduct(3)">
-        <h2>Menta Fusión</h2>
-        <div class="fifth-screen-img">
+      <div class="fifth-screen-div 4sec">
+      <div class="fifth-screen-img" @click="selectedProduct(3)">
+          <h2>Menta Fusión</h2>
           <img src="@/assets/images/menta-fusion.webp" alt="Sigari Gourmet CO" />
         </div>
       </div>
-      <div class="fifth-screen-div 5sec" @click="selectedProduct(4)">
-        <h2>Bubble-Gum</h2>
-        <div class="fifth-screen-img">
+      <div class="fifth-screen-div 5sec">
+      <div class="fifth-screen-img" @click="selectedProduct(4)">
+          <h2>Bubble-Gum</h2>
           <img src="@/assets/images/bubble-gum.webp" alt="Sigari Gourmet CO" />
         </div>
       </div>
-      <div class="fifth-screen-div 6sec" @click="selectedProduct(5)">
-        <h2>Chai smoke</h2>
-        <div class="fifth-screen-img">
+      <div class="fifth-screen-div 6sec">
+      <div class="fifth-screen-img" @click="selectedProduct(5)">
+          <h2>Chai smoke</h2>
           <img src="@/assets/images/chai-smoke.webp" alt="Sigari Gourmet CO" />
         </div>
       </div>
       <ProductosModal v-if="this.productStore.isProductModalOpen" :productIndex="productIndex"></ProductosModal>
     </section>
-    <!-- SIXTH SCREEN -->
+    <!-- SIXTH SCREEN --- OPINIONES SOBRE NOSOTROS-->
     <section class="sixth-screen screen-font" id="">
       <img src="@/assets//images/sixth.webp" alt="" class="sixth-img-background" />
       <div id="Opinionessobrenosotros" class="idToSect" />
