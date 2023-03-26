@@ -100,8 +100,7 @@ body.modal-open {
   background-repeat: no-repeat;
   color: rgb(239, 227, 184);
   width: 100%;
-  height: calc(100vh - 56px);
-  padding: 2rem;
+  padding: 2rem 2rem 3rem;
   padding-top: calc(2rem + 56px);
 }
 .first-screen-div {
@@ -116,6 +115,9 @@ body.modal-open {
     font-size: 1.9rem;
     margin: 4rem 0;
     text-align: left;
+    background-color: rgba(28, 27, 27, 0.6);
+    padding: 1rem;
+    border-radius: 10px;
   }
   .compra-aqui-a {
     display: inline-block;
@@ -124,6 +126,7 @@ body.modal-open {
     border: 2px solid rgb(239, 227, 184);
     padding: 1.4rem 4rem;
     font-size: 1rem;
+    background-color: rgba(28, 27, 27, 0.6);
     &:hover {
       background-color: rgb(146, 76, 38);
       color: rgb(259, 247, 204);
@@ -253,7 +256,6 @@ body.modal-open {
 //* FIFTH SCREEN
 .fifth-screen {
   background: rgb(166, 96, 58);
-  color: rgb(36, 36, 35);
   width: 100%;
   text-align: center;
   padding: 2rem 2rem 3rem;
@@ -262,6 +264,7 @@ body.modal-open {
   h1 {
     font-size: 2.5rem;
     margin: 3rem 0;
+    color: rgb(239, 227, 184);
   }
 }
 .fifth-screen-div {
@@ -273,9 +276,7 @@ body.modal-open {
   padding: 2.5rem 0;
   text-align: center;
   border-top: 2px solid rgb(239, 227, 184);
-}
-.first-img {
-  margin-bottom: 4rem !important;
+  border-bottom: 2px solid rgb(239, 227, 184);
 }
 .fifth-screen-img {
   overflow: hidden;
@@ -288,6 +289,7 @@ body.modal-open {
     transition: all 0.5s ease;
     object-fit: cover;
     height: 300px;
+    width: 100%;
   }
   h2 {
     display: inline-block;
@@ -302,6 +304,7 @@ body.modal-open {
     color: rgb(239, 227, 184);
     background: rgb(36, 36, 35, 0.6);
     transition: all 0.5s ease;
+    max-width: 260px;
   }
   &:hover {
     cursor: pointer;
@@ -449,5 +452,7 @@ $large-screen: 1024px;
 
 // Estilos para pantallas grandes
 @media (min-width: $large-screen) {
-  // Estilos aquí
+  .first-screen {
+    height: 100vh;
+  }
 }

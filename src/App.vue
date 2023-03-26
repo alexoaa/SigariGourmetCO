@@ -16,7 +16,7 @@
         <a class="compra-aqui-a" href="#Nuestrosproductos">COMPRA AQUÍ</a>
       </div>
     </section>
-    <!-- SECOND SCREEN -->
+    <!-- SECOND SCREEN --- -->
     <section class="second-screen screen-font">
       <div id="Nuestrahistoria" class="idToSect" />
       <div class="second-screen-div">
@@ -35,7 +35,7 @@
         <img src="@/assets/images/historia.webp" alt="Sigari Gourmet CO" />
       </div>
     </section>
-    <!-- THIRD SCREEN -->
+    <!-- THIRD SCREEN --- -->
     <section class="third-screen screen-font" id="">
       <div id="Productosnaturales" class="idToSect" />
       <h1>Productos naturales</h1>
@@ -74,7 +74,7 @@
         </div>
       </div>
     </section>
-    <!-- FOURTH SCREEN -->
+    <!-- FOURTH SCREEN --- -->
     <section class="fourth-screen screen-font" id="">
       <div id="¿Quiénessomos?" class="idToSect" />
       <h1>¿Quiénes somos?</h1>
@@ -117,13 +117,10 @@
         </div>
       </div>
     </section>
-    <!-- FIFTH SCREEN - NUESTROS PRODUCTOS-->
+    <!-- FIFTH SCREEN --- NUESTROS PRODUCTOS-->
     <section class="fifth-screen screen-font" id="">
       <div id="Nuestrosproductos" class="idToSect" />
       <h1>Nuestros productos</h1>
-      <div class="fifth-screen-img first-img">
-        <img src="@/assets/images/nuestros-productos.webp" alt="Sigari Gourmet CO" />
-      </div>
       <div class="fifth-screen-div 1sec">
       <div class="fifth-screen-img" @click="selectedProduct(0)">
           <h2>Coffee Bomb</h2>
@@ -189,7 +186,7 @@
         <h3>- Feisal Mustafá, Príncipe de Arabia Saudita.</h3>
       </div>
     </section>
-    <!-- SEVENTH SCREEN -->
+    <!-- SEVENTH SCREEN --- CONTACTO-->
     <section class="seventh-screen screen-font" id="">
       <div id="Contacto" class="idToSect" />
       <h1>Contacto</h1>

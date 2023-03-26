@@ -171,6 +171,7 @@ export default {
     align-items: center;
     margin: 1rem 0;
     border-radius: 10px;
+    width: 100%;
     img {
       object-fit: cover;
       height: 300px;
