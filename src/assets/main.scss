@@ -72,6 +72,7 @@ p {
 // Whenever a modal is open, the body will have overflow hidden
 body.modal-open {
   overflow: hidden;
+  margin-right: 17px; //This fixes when the modal is open, the body won't take the space of the scrollbar and this avoid the content adjust
 }
 
 .screen-font {
@@ -91,7 +92,8 @@ body.modal-open {
   z-index: 50;
   top: -60px;
 }
-
+.section-screen {
+}
 //* FIRST SCREEN
 .first-screen {
   background-image: url('@/assets/images/main.webp');
@@ -128,8 +130,10 @@ body.modal-open {
     font-size: 1rem;
     background-color: rgba(28, 27, 27, 0.6);
     &:hover {
-      background-color: rgb(146, 76, 38);
-      color: rgb(259, 247, 204);
+      background-color: rgba(28, 27, 27);
+      color: rgb(269, 257, 214);
+      border-color: rgb(269, 257, 214);
+      box-shadow: 0 0 20px 2px rgb(269, 257, 214, 0.3);
     }
   }
 }
@@ -166,12 +170,16 @@ body.modal-open {
 }
 //* THIRD SCREEN
 .third-screen {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   background: rgb(166, 96, 58);
   color: rgb(239, 227, 184);
   width: 100%;
   text-align: center;
   padding: 2rem;
   letter-spacing: 1px;
+
   h1 {
     font-size: 2.5rem;
     margin: 3rem 0;
@@ -185,6 +193,9 @@ body.modal-open {
   align-items: center;
   flex-wrap: wrap;
   color: rgb(239, 227, 184);
+  &:not(:last-child) {
+    border-bottom: 2px solid rgb(239, 227, 184);
+  }
   h2 {
     font-size: 2rem;
     margin: 2.5rem 0;
@@ -204,12 +215,12 @@ body.modal-open {
   align-items: center;
   margin: 1rem 0;
   img {
-    object-fit: cover;
     height: 300px;
     width: 300px;
+    object-fit: cover;
   }
 }
-//* FOURTH SCREEN
+//* FOURTH SCREEN --- ¿QUIENES SOMOS?
 .fourth-screen {
   background: rgb(239, 227, 184);
   color: rgb(166, 96, 58);
@@ -222,9 +233,10 @@ body.modal-open {
     margin: 3rem 0;
   }
 }
+.fourth-screen-main-div {
+  min-height: 900px;
+}
 .fourth-screen-div {
-  margin: 2.5rem 0 0;
-  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -241,7 +253,6 @@ body.modal-open {
   }
 }
 .fourth-screen-img {
-  // border-radius: 50%;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -253,7 +264,7 @@ body.modal-open {
     width: 300px;
   }
 }
-//* FIFTH SCREEN
+//* FIFTH SCREEN --- NUESTROS PRODUCTOS
 .fifth-screen {
   background: rgb(166, 96, 58);
   width: 100%;
@@ -425,34 +436,159 @@ body.modal-open {
   }
 }
 // Define las variables para los breakpoints
-$small-screen: 480px;
-$medium-screen: 768px;
-$large-screen: 1024px;
+// @custom-media --mobile-screen (width >= 320px) and (width <= 480px);
+// @custom-media --tablet-screen (width >= 481px) and (width <= 768px);
+// @custom-media --laptop-screen (width >= 769px) and (width <= 1023px);
+// @custom-media --desktop-screen (width >= 1024px) and (width <= 1200px);
+// @custom-media --extra-large-screen (width >= 1201px);
+@custom-media --small-screen (width <= 480px);
+@custom-media --medium-screen (width >= 481px) and (width <= 768px);
+@custom-media --large-screen (width >= 769px);
 
 // Estilos para pantallas pequeñas
-@media (max-width: $small-screen) {
-  // Estilos aquí
-}
-
-// Estilos para pantallas medianas
-@media (min-width: $medium-screen) {
-  .first-screen-img {
-    width: 100%;
-    position: relative;
-    &img {
-      position: absolute;
-      right: 0;
-      height: 100%;
-      /* width: 100%; */
-      /* object-fit: cover; */
-      object-fit: contain;
+@media screen and (width >= 481px) {
+  h1 {
+    font-size: 4rem !important;
+  }
+  .first-screen {
+    background-image: url('@/assets/images/main-large.webp');
+    background-position: center 20%;
+    height: 100vh;
+  }
+  .first-screen-div {
+    p {
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+    .compra-aqui-a {
+      margin-top: 70px;
     }
   }
+  .second-screen-img {
+    img {
+      width: 50%;
+    }
+  }
+  .third-screen-div {
+    width: 90%;
+  }
 }
-
-// Estilos para pantallas grandes
-@media (min-width: $large-screen) {
-  .first-screen {
-    height: 100vh;
+@media only screen and (--large-screen) {
+  .compra-aqui-a {
+    transform: scale(1.2);
+  }
+  //* THIRD SCREEN - PRODUCTOS NATURALES
+  .third-screen-div {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding: 3rem 0;
+    margin: 0;
+    .third-screen-div-desc {
+      width: 60%;
+    }
+  }
+  .third-screen-img {
+    height: 300px;
+    max-width: 300px;
+    img {
+      width: 100%;
+    }
+  }
+  .fourth-screen {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .fourth-screen-main-div {
+      width: 90%;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .fourth-screen-div {
+      margin: 0;
+      width: 95%;
+      height: 600px;
+    }
+    .fourth-screen-div-desc {
+      width: 90%;
+    }
+    .fourth-screen-img {
+      height: 70%;
+      width: 90%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  //* FIFTH SCREEN --- NUESTROS PRODUCTOS
+  .fifth-screen {
+    background: rgb(166, 96, 58);
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    h1 {
+      width: 100%;
+    }
+  }
+  .fifth-screen-grid-container {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: repeat(2, 300px);
+    grid-gap: 70px;
+    margin-bottom: 78px;
+    // align-content: space-between;
+  }
+  .fifth-screen-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    padding: 0;
+    flex-wrap: nowrap;
+  }
+  .fifth-screen-img {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    width: 300px;
+    img {
+      transition: all 0.5s ease;
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+    }
+    h2 {
+      display: inline-block;
+      position: absolute;
+      top: 50;
+      left: 50;
+      z-index: 2;
+      font-size: 2rem;
+      margin: 0 1.5rem;
+      padding: 16px 24px;
+      border-radius: 10px;
+      color: rgb(239, 227, 184);
+      background: rgb(36, 36, 35, 0.6);
+      transition: all 0.5s ease;
+      max-width: 260px;
+    }
+    &:hover {
+      cursor: pointer;
+      h2 {
+        transform: scale(1.1);
+      }
+      img {
+        filter: brightness(0.6);
+        transform: scale(1.2);
+      }
+    }
   }
 }

@@ -33,6 +33,7 @@
       </div>
       <div class="second-screen-img">
         <img src="@/assets/images/historia.webp" alt="Sigari Gourmet CO" />
+        <img src="@/assets/images/smoke-comunidad.webp" alt="Sigari Gourmet CO" />
       </div>
     </section>
     <!-- THIRD SCREEN --- -->
@@ -43,7 +44,7 @@
         <div class="third-screen-img">
           <img src="@/assets/images/ingredientes.webp" alt="Sigari Gourmet CO" />
         </div>
-        <div>
+        <div class="third-screen-div-desc">
           <h2>Ingredientes</h2>
           <p>
             De la más alta calidad y excelencia, para una esencia natural y sana en el mundo del
@@ -55,7 +56,7 @@
         <div class="third-screen-img">
           <img src="@/assets/images/alternativa-sostenible.webp" alt="Sigari Gourmet CO" />
         </div>
-        <div>
+        <div class="third-screen-div-desc">
           <h2>Alternativa sostenible</h2>
           <p>Sin comprometer la salud de los clientes o la integridad de nuestro planeta.</p>
         </div>
@@ -64,7 +65,7 @@
         <div class="third-screen-img">
           <img src="@/assets/images/sabores.webp" alt="Sigari Gourmet CO" />
         </div>
-        <div>
+        <div class="third-screen-div-desc">
           <h2>Sabores</h2>
           <p>
             Cada cigarro es elaborado a mano por expertos artesanos, asegurando que cada uno tenga
@@ -78,42 +79,44 @@
     <section class="fourth-screen screen-font" id="">
       <div id="¿Quiénessomos?" class="idToSect" />
       <h1>¿Quiénes somos?</h1>
-      <div class="fourth-screen-div 1st-sec">
-        <div class="fourth-screen-img">
-          <img src="@/assets/images/empresa.webp" alt="Sigari Gourmet CO" />
+      <div class="fourth-screen-main-div">
+        <div class="fourth-screen-div 1st-sec">
+          <div class="fourth-screen-img">
+            <img src="@/assets/images/empresa.webp" alt="Sigari Gourmet CO" />
+          </div>
+          <div class="fourth-screen-div-desc">
+            <h2>Empresa 100% mexicana</h2>
+            <p>
+              Basados en productos naturales y sin químicos para la creación de cada cigarro Somos una
+              empresa nueva en el mercado que viene desde abajo arrasnado con toda la competencia,
+              animate a fumar tu platillo favorito.
+            </p>
+          </div>
         </div>
-        <div>
-          <h2>Empresa 100% mexicana</h2>
-          <p>
-            Basados en productos naturales y sin químicos para la creación de cada cigarro Somos una
-            empresa nueva en el mercado que viene desde abajo arrasnado con toda la competencia,
-            animate a fumar tu platillo favorito.
-          </p>
+        <div class="fourth-screen-div 2nd-sec">
+          <div class="fourth-screen-img">
+            <img src="@/assets/images/creacion.webp" alt="Sigari Gourmet CO" />
+          </div>
+          <div class="fourth-screen-div-desc">
+            <h2>Creación</h2>
+            <p>
+              Creada en 2020 con ideas y bases italianas, forma parte de nuestras recetas creadas por
+              nuestros ancestros combinando productos naturales y el sabor de tu platillo favorito,
+              solo para los paladares mas refinados del planeta.
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="fourth-screen-div 2nd-sec">
-        <div class="fourth-screen-img">
-          <img src="@/assets/images/creacion.webp" alt="Sigari Gourmet CO" />
-        </div>
-        <div>
-          <h2>Creación</h2>
-          <p>
-            Creada en 2020 con ideas y bases italianas, forma parte de nuestras recetas creadas por
-            nuestros ancestros combinando productos naturales y el sabor de tu platillo favorito,
-            solo para los paladares mas refinados del planeta.
-          </p>
-        </div>
-      </div>
-      <div class="fourth-screen-div 3rd-sec">
-        <div class="fourth-screen-img">
-          <img src="@/assets/images/innovacion.webp" alt="Sigari Gourmet CO" />
-        </div>
-        <div>
-          <h2>Innovación</h2>
-          <p>
-            Nuestra elaboración se caracteriza por ser única al momento de trabajar con los
-            ingredientes y priorizando laarmonía entre salud y sabor.
-          </p>
+        <div class="fourth-screen-div 3rd-sec">
+          <div class="fourth-screen-img">
+            <img src="@/assets/images/innovacion.webp" alt="Sigari Gourmet CO" />
+          </div>
+          <div class="fourth-screen-div-desc">
+            <h2>Innovación</h2>
+            <p>
+              Nuestra elaboración se caracteriza por ser única al momento de trabajar con los
+              ingredientes y priorizando laarmonía entre salud y sabor.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -121,40 +124,42 @@
     <section class="fifth-screen screen-font" id="">
       <div id="Nuestrosproductos" class="idToSect" />
       <h1>Nuestros productos</h1>
-      <div class="fifth-screen-div 1sec">
-      <div class="fifth-screen-img" @click="selectedProduct(0)">
-          <h2>Coffee Bomb</h2>
-          <img src="@/assets/images/coffee-bomb.webp" alt="Sigari Gourmet CO" />
+      <div class="fifth-screen-grid-container">
+        <div class="fifth-screen-div 1sec">
+          <div class="fifth-screen-img" @click="selectedProduct(0)">
+            <h2>Coffee Bomb</h2>
+            <img src="@/assets/images/coffee-bomb.webp" alt="Sigari Gourmet CO" />
+          </div>
         </div>
-      </div>
-      <div class="fifth-screen-div 2sec">
-      <div class="fifth-screen-img" @click="selectedProduct(1)">
-          <h2>Choco Passion</h2>
-          <img src="@/assets/images/choco-passion.webp" alt="Sigari Gourmet CO" />
+        <div class="fifth-screen-div 2sec">
+        <div class="fifth-screen-img" @click="selectedProduct(1)">
+            <h2>Choco Passion</h2>
+            <img src="@/assets/images/choco-passion.webp" alt="Sigari Gourmet CO" />
+          </div>
         </div>
-      </div>
-      <div class="fifth-screen-div 3sec">
-      <div class="fifth-screen-img" @click="selectedProduct(2)">
-          <h2>Mango Fresa Delight</h2>
-          <img src="@/assets/images/mango-fresa-delight.webp" alt="Sigari Gourmet CO" class="object-contain" />
+        <div class="fifth-screen-div 3sec">
+        <div class="fifth-screen-img" @click="selectedProduct(2)">
+            <h2>Mango Fresa Delight</h2>
+            <img src="@/assets/images/mango-fresa-delight.webp" alt="Sigari Gourmet CO" class="object-contain" />
+          </div>
         </div>
-      </div>
-      <div class="fifth-screen-div 4sec">
-      <div class="fifth-screen-img" @click="selectedProduct(3)">
-          <h2>Menta Fusión</h2>
-          <img src="@/assets/images/menta-fusion.webp" alt="Sigari Gourmet CO" />
+        <div class="fifth-screen-div 4sec">
+        <div class="fifth-screen-img" @click="selectedProduct(3)">
+            <h2>Menta Fusión</h2>
+            <img src="@/assets/images/menta-fusion.webp" alt="Sigari Gourmet CO" />
+          </div>
         </div>
-      </div>
-      <div class="fifth-screen-div 5sec">
-      <div class="fifth-screen-img" @click="selectedProduct(4)">
-          <h2>Bubble-Gum</h2>
-          <img src="@/assets/images/bubble-gum.webp" alt="Sigari Gourmet CO" />
+        <div class="fifth-screen-div 5sec">
+        <div class="fifth-screen-img" @click="selectedProduct(4)">
+            <h2>Bubble-Gum</h2>
+            <img src="@/assets/images/bubble-gum.webp" alt="Sigari Gourmet CO" />
+          </div>
         </div>
-      </div>
-      <div class="fifth-screen-div 6sec">
-      <div class="fifth-screen-img" @click="selectedProduct(5)">
-          <h2>Chai smoke</h2>
-          <img src="@/assets/images/chai-smoke.webp" alt="Sigari Gourmet CO" />
+        <div class="fifth-screen-div 6sec">
+        <div class="fifth-screen-img" @click="selectedProduct(5)">
+            <h2>Chai smoke</h2>
+            <img src="@/assets/images/chai-smoke.webp" alt="Sigari Gourmet CO" />
+          </div>
         </div>
       </div>
       <ProductosModal v-if="this.productStore.isProductModalOpen" :productIndex="productIndex"></ProductosModal>
