@@ -37,10 +37,11 @@
     <div class="nav-container" v-show="this.isMenuOpen">
       <ul class="nav-menu">
         <li
-          v-for="opcion in opciones"
+          v-for="(opcion, index) in opciones"
           class="nav-item"
-          :key="opcion"
-          @click="onClickToSection(opcion)"
+          :key="index"
+          :class="{ 'active-section': index == currentSection }"
+          @click="onClickToSection(index)"
         >
           <a :href="toDiv">{{ opcion }}</a>
         </li>
@@ -52,12 +53,16 @@
 <script>
 export default {
   name: 'DropDownMenu',
+  props: {
+    currentSection: Number
+  },
   data() {
     return {
       scrolledDown: false,
       scrolledDownA: false,
       isMenuOpen: false,
       textMenuLabel: 'Principal',
+      selectedSection: '',
       opciones: [
         'Principal',
         'Nuestra historia',
@@ -83,17 +88,17 @@ export default {
         this.scrolledDownA = false;
       }
     },
-    onClickToSection(opcion) {
-      this.textMenuLabel = opcion;
+    onClickToSection(index) {
+      this.selectedSection = index;
       this.isMenuOpen = !this.isMenuOpen;
     }
   },
   computed: {
     textMenuLabelComp() {
-      return this.textMenuLabel;
+      return this.opciones[this.currentSection];
     },
     toDiv() {
-      return `#${this.textMenuLabel.replace(/\s+/g, '')}`;
+      return `#${this.selectedSection}`;
     }
   },
   mounted() {
@@ -179,5 +184,11 @@ export default {
   cursor: pointer;
   color: rgb(239, 227, 184);
   background: rgb(166, 96, 58);
+}
+.active-section {
+  background: rgb(166, 96, 58);
+  a {
+    color: rgb(239, 227, 184);
+  }
 }
 </style>

@@ -37,6 +37,10 @@
   font-style: normal;
 }
 
+//TODO Añadir icono de comprar o carrito al modal
+//TODO Arreglar problema de ruta de imagenes al abrir modal
+//TODO Cambiar de acuerdo al tamañao de la pantalla las opciones del menu
+
 * {
   padding: 0;
   margin: 0;
@@ -91,6 +95,7 @@ body.modal-open {
   position: absolute;
   z-index: 50;
   top: -60px;
+  height: 80px;
 }
 .section-screen {
 }
