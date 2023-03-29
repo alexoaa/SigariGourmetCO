@@ -189,6 +189,7 @@ export default {
   background: rgb(166, 96, 58);
   a {
     color: rgb(239, 227, 184);
+    font-family: 'Rasa-Bold', sans-serif;
   }
 }
 </style>
