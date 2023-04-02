@@ -94,8 +94,8 @@ body.modal-open {
 .idToSect {
   position: absolute;
   z-index: 50;
-  top: -60px;
-  height: 80px;
+  top: -40px;
+  height: 55%;
 }
 .section-screen {
 }
@@ -118,6 +118,9 @@ body.modal-open {
     font-size: 2.4rem;
     width: 50px;
     margin: 1rem 0;
+    &:hover {
+      text-shadow: 2px 2px 15px rgb(269, 257, 214, 0.7);
+    }
   }
   p {
     font-size: 1.9rem;
@@ -351,10 +354,7 @@ body.modal-open {
     z-index: -1;
     top: 0;
     left: 0;
-    // right: 0;
     transform: rotate(270deg);
-    // width: 10000px;
-    // height: 10000px;
     width: 1500px;
     height: 1500px;
   }
@@ -367,7 +367,6 @@ body.modal-open {
   align-items: center;
   flex-wrap: wrap;
   border-top: 10px dotted rgb(166, 96, 58);
-  // border-bottom: 1px solid black;
   h3 {
     margin: 1rem;
   }
@@ -408,9 +407,6 @@ body.modal-open {
     justify-content: space-evenly;
     margin: 2rem 0;
   }
-  // p {
-  //   white-space: nowrap;
-  // }
 }
 .seventh-screen-div {
   margin: 2.5rem 0 0;
@@ -441,12 +437,6 @@ body.modal-open {
     width: 300px;
   }
 }
-// Define las variables para los breakpoints
-// @custom-media --mobile-screen (width >= 320px) and (width <= 480px);
-// @custom-media --tablet-screen (width >= 481px) and (width <= 768px);
-// @custom-media --laptop-screen (width >= 769px) and (width <= 1023px);
-// @custom-media --desktop-screen (width >= 1024px) and (width <= 1200px);
-// @custom-media --extra-large-screen (width >= 1201px);
 @custom-media --small-screen (width <= 480px);
 @custom-media --medium-screen (width >= 481px) and (width <= 768px);
 @custom-media --large-screen (width >= 769px);
@@ -547,7 +537,6 @@ body.modal-open {
     grid-template-rows: repeat(2, 300px);
     grid-gap: 70px;
     margin-bottom: 78px;
-    // align-content: space-between;
   }
   .fifth-screen-div {
     display: flex;

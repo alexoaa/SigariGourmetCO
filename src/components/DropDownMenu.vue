@@ -37,13 +37,30 @@
     <div class="nav-container" v-show="this.isMenuOpen">
       <ul class="nav-menu">
         <li
-          v-for="(opcion, index) in opciones"
+          v-for="(value, key) in opciones"
           class="nav-item"
-          :key="index"
-          :class="{ 'active-section': index == currentSection }"
-          @click="onClickToSection(index)"
+          :key="value"
+          :class="{ 'active-section': value == currentSection }"
+          @click="onClickToSection(value)"
         >
-          <a :href="toDiv">{{ opcion }}</a>
+          <a :href="toDiv">{{ key }}</a>
+        </li>
+      </ul>
+    </div>
+    <!-- RESPONSIVE NAV FOR SCREENS OVER 768PX -->
+    <div class="nav-container-large" :class="{ 'scrolled-down': this.scrolledDown }">
+      <ul class="nav-menu-large">
+        <li
+          v-for="(value, key) in opciones"
+          class="nav-item-large"
+          :key="value"
+          :class="{
+            'active-section-large': value == currentSection && value != 'principal',
+            'scrolled-down-a-large': this.scrolledDownA
+          }"
+          @click="this.selectedSection = value"
+        >
+          <a :href="toDiv">{{ key }}</a>
         </li>
       </ul>
     </div>
@@ -54,24 +71,23 @@
 export default {
   name: 'DropDownMenu',
   props: {
-    currentSection: Number
+    currentSection: String
   },
   data() {
     return {
       scrolledDown: false,
       scrolledDownA: false,
       isMenuOpen: false,
-      textMenuLabel: 'Principal',
       selectedSection: '',
-      opciones: [
-        'Principal',
-        'Nuestra historia',
-        'Productos naturales',
-        '¿Quiénes somos?',
-        'Nuestros productos',
-        'Opiniones sobre nosotros',
-        'Contacto'
-      ]
+      opciones: {
+        Principal: 'principal',
+        'Nuestra historia': 'nuestra-historia',
+        'Productos naturales': 'productos-naturales',
+        '¿Quiénes somos?': 'quienes-somos',
+        'Nuestros productos': 'nuestros-productos',
+        'Opiniones sobre nosotros': 'opiniones-sobre-nosotros',
+        Contacto: 'contacto'
+      }
     };
   },
   methods: {
@@ -88,14 +104,14 @@ export default {
         this.scrolledDownA = false;
       }
     },
-    onClickToSection(index) {
-      this.selectedSection = index;
+    onClickToSection(value) {
+      this.selectedSection = value;
       this.isMenuOpen = !this.isMenuOpen;
     }
   },
   computed: {
     textMenuLabelComp() {
-      return this.opciones[this.currentSection];
+      return Object.keys(this.opciones).find((key) => this.opciones[key] === this.currentSection);
     },
     toDiv() {
       return `#${this.selectedSection}`;
@@ -111,6 +127,8 @@ export default {
 </script>
 
 <style lang="scss">
+@custom-media --large-screen (width >= 769px);
+
 .menu-open {
   background: rgb(166, 96, 58) !important;
   span {
@@ -119,6 +137,9 @@ export default {
   svg {
     fill: rgb(239, 227, 184) !important;
   }
+}
+.nav-container-large {
+  display: none;
 }
 .nav-main-container {
   position: fixed;
@@ -190,6 +211,63 @@ export default {
   a {
     color: rgb(239, 227, 184);
     font-family: 'Rasa-Bold', sans-serif;
+  }
+}
+@media only screen and (--large-screen) {
+  .nav-main-container-1st-div,
+  .nav-container {
+    display: none;
+  }
+  .nav-container-large {
+    display: block;
+    width: 100%;
+    z-index: 10;
+  }
+  .nav-menu-large {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .nav-item-large a {
+    display: inline-block;
+    padding: 18px 24px;
+    color: rgb(239, 227, 184);
+    font-family: 'Rasa-SemiBold', sans-serif;
+    font-size: 1.4rem;
+    min-height: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+  }
+  .nav-item-large a:hover {
+    cursor: pointer;
+    color: rgb(239, 227, 184) !important;
+    font-family: 'Rasa-Bold', sans-serif;
+    background: rgb(166, 96, 58);
+  }
+  .active-section-large {
+    background: rgb(166, 96, 58);
+    a {
+      color: rgb(239, 227, 184) !important;
+      font-family: 'Rasa-Bold', sans-serif;
+    }
+  }
+  .scrolled-down {
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.2);
+    background: rgb(239, 227, 184);
+  }
+  .scrolled-down-a-large {
+    a {
+      min-height: 88px;
+      padding: 21px 24px;
+      color: rgb(166, 96, 58);
+      &:hover {
+        color: rgb(146, 76, 38);
+      }
+    }
   }
 }
 </style>

@@ -13,6 +13,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@vueuse/core": "^9.13.0",
     "pinia": "^2.0.32",
     "postcss-custom-media": "^9.1.2",
     "vue": "^3.2.47",

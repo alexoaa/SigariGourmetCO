@@ -1,10 +1,10 @@
 <template>
   <div class="main-container">
     <!-- DROPDOWN MENU -->
-    <DropDownMenu :currentSection="parseInt(currentSection)"/>
-    <!-- FIRST SCREEN -->
+    <DropDownMenu :currentSection="this.currentSection"/>
+    <!-- FIRST SCREEN --- PRINCIPAL -->
     <section class="first-screen screen-font">
-      <div id="0" class="idToSect" />
+      <div id="principal" class="idToSect" />
       <div class="first-screen-div">
         <h1><a href="/">SIGARI GOURMET CO.</a></h1>
         <div>
@@ -13,12 +13,12 @@
             exigentes."
           </p>
         </div>
-        <a class="compra-aqui-a" href="#Nuestrosproductos">COMPRA AQUÍ</a>
+        <a class="compra-aqui-a" href="#nuestros-productos">COMPRA AQUÍ</a>
       </div>
     </section>
-    <!-- SECOND SCREEN --- -->
+    <!-- SECOND SCREEN --- NUESTRA HISTORIA -->
     <section class="second-screen screen-font">
-      <div id="1" class="idToSect" />
+      <div id="nuestra-historia" class="idToSect" />
       <div class="second-screen-div">
         <h1>Nuestra historia</h1>
         <h4>Compromiso con la excelencia</h4>
@@ -36,9 +36,9 @@
         <img src="@/assets/images/smoke-comunidad.webp" alt="Sigari Gourmet CO" />
       </div>
     </section>
-    <!-- THIRD SCREEN --- -->
+    <!-- THIRD SCREEN --- PRODUCTOS NATURALES -->
     <section class="third-screen screen-font" id="">
-      <div id="2" class="idToSect" />
+      <div id="productos-naturales" class="idToSect" />
       <h1>Productos naturales</h1>
       <div class="third-screen-div 1st-img">
         <div class="third-screen-img">
@@ -75,9 +75,9 @@
         </div>
       </div>
     </section>
-    <!-- FOURTH SCREEN --- -->
+    <!-- FOURTH SCREEN --- QUIENES SOMOS -->
     <section class="fourth-screen screen-font" id="">
-      <div id="3" class="idToSect" />
+      <div id="quienes-somos" class="idToSect" />
       <h1>¿Quiénes somos?</h1>
       <div class="fourth-screen-main-div">
         <div class="fourth-screen-div 1st-sec">
@@ -122,7 +122,7 @@
     </section>
     <!-- FIFTH SCREEN --- NUESTROS PRODUCTOS-->
     <section class="fifth-screen screen-font" id="">
-      <div id="4" class="idToSect" />
+      <div id="nuestros-productos" class="idToSect" />
       <h1>Nuestros productos</h1>
       <div class="fifth-screen-grid-container">
         <div class="fifth-screen-div 1sec">
@@ -167,7 +167,7 @@
     <!-- SIXTH SCREEN --- OPINIONES SOBRE NOSOTROS-->
     <section class="sixth-screen screen-font" id="">
       <img src="@/assets//images/sixth.webp" alt="" class="sixth-img-background" />
-      <div id="5" class="idToSect" />
+      <div id="opiniones-sobre-nosotros" class="idToSect" />
       <h1>Opiniones sobre nosotros</h1>
       <div class="sixth-screen-div 1st-op">
         <p>
@@ -193,7 +193,7 @@
     </section>
     <!-- SEVENTH SCREEN --- CONTACTO-->
     <section class="seventh-screen screen-font" id="">
-      <div id="6" class="idToSect" />
+      <div id="contacto" class="idToSect" />
       <h1>Contacto</h1>
       <div class="seventh-screen-img">
         <img src="@/assets/images/contact.png" alt="Sigari Gourmet CO" />
@@ -301,7 +301,7 @@ export default {
       entries.forEach((entry)=>{
         if (entry.intersectionRatio > 0 ) {
           this.currentSection = entry.target.id;
-          console.log(this.currentSection);
+          history.pushState(null, null, `#${this.currentSection}`);
         }
       });
     },
