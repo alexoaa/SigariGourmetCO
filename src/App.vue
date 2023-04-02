@@ -120,7 +120,7 @@
         </div>
       </div>
     </section>
-    <!-- FIFTH SCREEN --- NUESTROS PRODUCTOS-->
+    <!-- FIFTH SCREEN --- NUESTROS PRODUCTOS -->
     <section class="fifth-screen screen-font" id="">
       <div id="nuestros-productos" class="idToSect" />
       <h1>Nuestros productos</h1>
@@ -164,7 +164,7 @@
       </div>
       <ProductosModal v-if="this.productStore.isProductModalOpen" :productIndex="productIndex"></ProductosModal>
     </section>
-    <!-- SIXTH SCREEN --- OPINIONES SOBRE NOSOTROS-->
+    <!-- SIXTH SCREEN --- OPINIONES SOBRE NOSOTROS -->
     <section class="sixth-screen screen-font" id="">
       <img src="@/assets//images/sixth.webp" alt="" class="sixth-img-background" />
       <div id="opiniones-sobre-nosotros" class="idToSect" />
@@ -191,7 +191,7 @@
         <h3>- Feisal Mustafá, Príncipe de Arabia Saudita.</h3>
       </div>
     </section>
-    <!-- SEVENTH SCREEN --- CONTACTO-->
+    <!-- SEVENTH SCREEN --- CONTACTO -->
     <section class="seventh-screen screen-font" id="">
       <div id="contacto" class="idToSect" />
       <h1>Contacto</h1>
