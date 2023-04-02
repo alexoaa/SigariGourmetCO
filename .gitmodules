@@ -1,0 +1,3 @@
+[submodule "submodules/SigariGourmetCO"]
+	path = submodules/SigariGourmetCO
+	url = https://github.com/alexoaa/SigariGourmetCO
