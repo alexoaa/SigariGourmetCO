@@ -13,7 +13,7 @@
     </div>
       <div class="product-modal-img">
         <!-- <img :src="imgSrc" alt="Sigari Gourmet CO" /> -->
-        <img src="@/assets/images/coffee-bomb.webp" alt="Sigari Gourmet CO" />
+        <img :src="imgSrc" alt="Sigari Gourmet CO" />
       </div>
       <h2>{{ productosInfo[productIndex].producto }}</h2>
       <p>{{ productosInfo[productIndex].desc }}</p>
@@ -28,6 +28,14 @@ import { mapStores } from 'pinia';
 import useProductStore from '@/stores/product.js';
 import { onClickOutside } from '@vueuse/core';
 
+// Import de imagenes
+import coffeeBombImg from "@/assets/images/coffee-bomb.webp";
+import chocoPassion from "@/assets/images/choco-passion.webp";
+import mangoFresaDelight from "@/assets/images/mango-fresa-delight.webp";
+import mentaFusion from "@/assets/images/menta-fusion.webp";
+import bubbleGum from "@/assets/images/bubble-gum.webp";
+import chaiSmoke from "@/assets/images/chai-smoke.webp";
+
 export default {
   name: 'ProductosModal',
   props: {
@@ -38,8 +46,7 @@ export default {
   },
   computed: {
     imgSrc() {
-      // return this.productosInfo[this.productIndex].img;
-      return "@/assets/images/coffee-bomb.webp";
+      return this.productosInfo[this.productIndex].img;      
     },
     ...mapStores(useProductStore)
   },
@@ -63,13 +70,13 @@ export default {
           desc: `Si eres un amante del café, nuestro producto elaborado con café es perfecto para ti. Con
           su sabor delicioso y natural, podrás disfrutar de la experiencia de un café recién hecho
           en cualquier momento y lugar.`,
-          img: '@/assets/images/coffee-bomb.webp'
+          img: coffeeBombImg
         },
         {
           producto: 'Choco Passion',
           desc: `Con su sabor rico y cremoso, podrás disfrutar de la experiencia del chocolate en cualquier
           momento y lugar, sin sentirte culpable por haberlo disfrutado.`,
-          img: 'choco-passion.webp'
+          img: chocoPassion
         },
         {
           producto: 'Mango Fresa Delight',
@@ -77,13 +84,13 @@ export default {
           cualquier momento del día. Ya sea como un complemento perfecto para un desayuno
           energizante, como un snack delicioso a media tarde, o incluso como postre después de una
           cena deliciosa, nuestro producto siempre es una buena opción.`,
-          img: 'mango-fresa-delight.webp'
+          img: mangoFresaDelight
         },
         {
           producto: 'Menta Fusión',
           desc: `Hemos utilizado la mejor selección de hojas de menta fresca o hierbas finas para crear un
           sabor fresco y aromático que te encantará. Delicioso y refrescante.`,
-          img: 'menta-fusion.webp'
+          img: mentaFusion
         },
         {
           producto: 'Bubble-Gum',
@@ -92,7 +99,7 @@ export default {
           como un postre después de una comida, como un refrigerio dulce en el trabajo o en la
           escuela, o incluso como una opción para satisfacer los antojos durante la noche, nuestro
           producto siempre será una buena elección.`,
-          img: 'bubble-gum.webp'
+          img: bubbleGum
         },
         {
           producto: 'Chai smoke',
@@ -100,7 +107,7 @@ export default {
           bebida que ha sido cuidadosamente creada con una combinación de especias aromáticas y té
           negro. Este producto es perfecto para aquellos que buscan una bebida con un sabor exótico
           y estimulante.`,
-          img: 'chai-smoke.webp'
+          img: chaiSmoke
         }
       ]
     };

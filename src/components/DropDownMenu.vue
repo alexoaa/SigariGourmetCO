@@ -34,7 +34,7 @@
         />
       </svg>
     </div>
-    <div class="nav-container" v-show="this.isMenuOpen">
+    <div class="nav-container" v-show="this.isMenuOpen" ref="navContainer">
       <ul class="nav-menu">
         <li
           v-for="(value, key) in opciones"
